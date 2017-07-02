@@ -159,7 +159,7 @@ function updateScore()
 //Key event listeners (keyboard controls)
 document.addEventListener('keydown', event => {
 	//Debug log keycode
-	console.log(event.keyCode);
+	//console.log(event.keyCode);
 	//Change movement direction
 	//Left dir
 	if(event.keyCode === 37)
