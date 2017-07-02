@@ -29,6 +29,7 @@ let lost = false;
 //Update, run every animation frame
 let lastTime = 0;
 let moveCounter = 0;
+let moveTarget = 150;
 function update(time = 0)
 {
 	//Set deltaTime (timing variables)
@@ -37,7 +38,7 @@ function update(time = 0)
 	//Update counter to time movement
 	moveCounter += deltaTime;
 	//If counter is full, move and reset counter
-	if(moveCounter > 150 && !lost)
+	if(moveCounter > moveTarget && !lost)
 	{
 		moveCounter = 0;
 		movePlayer();
@@ -118,6 +119,7 @@ function checkApple()
 {
 	//check if head is in apple
 	//if yes add 1 to score and randomize apple position
+	//Added: increase speed by one if over 100
 	if(player.x === apple.x && player.y === apple.y)
 	{
 		//add length & score
@@ -128,6 +130,11 @@ function checkApple()
 		//Randomize apple
 		apple.x = (20 * Math.random() | 0);
 		apple.y = (20 * Math.random() | 0);
+		//Increase game speed by 1 ms
+		if(moveTarget > 100)
+		{
+			moveTarget--;
+		}
 	}
 }
 
@@ -200,6 +207,8 @@ function playerReset()
 	player.score = 0;
 	apple.x = 10;
 	apple.y = 10;
+	moveTarget = 150;
+	moveCounter = 0;
 	updateScore();
 }
 
