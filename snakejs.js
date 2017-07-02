@@ -151,9 +151,10 @@ function checkSelf()
 	});
 }
 
+//Simple score update
 function updateScore()
 {
-	document.getElementById('score').innerText = player.score;
+	document.getElementById('score').innerText = "Score: " + player.score;
 }
 
 //Key event listeners (keyboard controls)
