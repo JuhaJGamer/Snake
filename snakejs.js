@@ -180,8 +180,27 @@ document.addEventListener('keydown', event => {
 	else if (event.keyCode === 40)
 	{
 		player.dir = -2;
+	}
+
+	if(lost)
+	{
+		playerReset();
+		lost = false;
 	}	
 });
+
+function playerReset()
+{
+	player.x = 5;
+	player.y = 5;
+	player.dir = -1;
+	player.tail = [];
+	player.length = 3;
+	player.score = 0;
+	apple.x = 10;
+	apple.y = 10;
+	updateScore();
+}
 
 //Game colors (for easy modification)
 const colors = [
