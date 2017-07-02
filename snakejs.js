@@ -141,7 +141,7 @@ function checkApple()
 function checkWalls()
 {
 	//If player goes over canvas limits, die
-	if(player.x > 20 || player.x < 0 || player.y > 20 || player.y < 0)
+	if(player.x > 19 || player.x < 0 || player.y > 19 || player.y < 0)
 	{
 		lost = true;
 	}
