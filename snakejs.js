@@ -24,7 +24,7 @@ const player = {
 const apple = {x: 10, y: 10};
 
 //Bool to check if dead
-let lost = false;
+let lost = true;
 
 //Update, run every animation frame
 let lastTime = 0;
